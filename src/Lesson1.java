@@ -35,7 +35,7 @@ public class Lesson1 {
         }
         System.out.println("Максимальное значение " + max);
     }
-//не готово
+    //не готово
     public void task1e() {
         String[] arrayTerem = new String[] {"мышка", "лягушка", "мишка"};
         Scanner scanner = new Scanner(System.in);
