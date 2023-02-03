@@ -3,37 +3,16 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
 
-        //System.out.println("Hello, world");
-        String[] arrayTerem = new String[] {"мышка", "лягушка", "мишка"};
-        Scanner scanner = new Scanner(System.in);
-        boolean correctly=false;
-        for (int i = 0; i < 5; i++) {
-            if (correctly==true) {
-                break;
-            }
-            System.out.println("Кто-кто в теремочке живет?");
-                String input = scanner.nextLine();
-                for (int j = 0; j < 3; j++) {
-                    if (input.equalsIgnoreCase(arrayTerem[j])) {
-                        System.out.println("Вы угадали");
-                        correctly = true;
-                        break;
-                    }
-                    if (j==2) {
-                        System.out.println("Вы не угадали");
-                    }
-            }
-            if (i==4) {
-                System.out.println("Вы проиграли");
-            }
-        }
-
-
-
-
+        //Lesson1task1a.task1a();
+        //Lesson1task1b.task1b("12345");
+        //Lesson1task1c.task1c(244);
+        Lesson1task1d.task1d(23,-1,0, 99, 50, 6, 77, 12, 10, 3);
 
 
     }
+
+
+
 
 
 
