@@ -44,6 +44,30 @@ public class Lesson1 {
                 System.out.println("Вы проиграли");
             }
         }
-
     }
+    static void task1e2() {
+        Scanner scanner = new Scanner(System.in);
+        int count = 5;
+        do {
+            System.out.println("Кто-кто в теремочке живет?");
+            String resident = scanner.nextLine().toLowerCase();
+            switch (resident)
+            {
+                case "мышка":
+                case "лягушка":
+                case "мишка":
+                    System.out.println("Вы угадали");
+                    //count =0;
+                    break;
+                default:
+                    System.out.println("Вы не угадали");
+                    count --;
+            }
+            if (count == 0) {
+                System.out.println("Вы проиграли");
+            }
+
+        } while (count>0);
+    }
+
 }
