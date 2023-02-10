@@ -14,6 +14,8 @@ public class Run {
         rabbit2.eat(4, Animal.Meal.GRASS);
         Animal.reproduction(rabbit1, rabbit2);
 
+        Animal.reproduction(tiger1, rabbit2);
+
         Animal[] animals = new Animal[] {tiger1, tiger2, rabbit1, rabbit2};
         for (Animal a:animals) {
             a.wolk();

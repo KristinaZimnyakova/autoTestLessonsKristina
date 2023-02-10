@@ -45,7 +45,9 @@ public abstract class Animal {
     protected abstract void voice();
 
     protected static void reproduction (Animal animal1, Animal animal2) {
-        if (animal1.genderAnimal.equals(animal2.genderAnimal)) {
+        if (animal1.getClass() != animal2.getClass()) {
+            System.out.println("Особи должны быть одного класса");
+        } else if (animal1.genderAnimal.equals(animal2.genderAnimal)) {
             System.out.println("Для размножения требуется самец и самка");
         }
         else {
