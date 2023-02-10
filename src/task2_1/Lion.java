@@ -3,13 +3,13 @@ package task2_1;
 import java.util.UUID;
 
 public class Lion extends Predator{
-    public Lion(int weight, int age, Gender gender, UUID geneticCode) {
+    protected Lion(int weight, int age, Gender gender, UUID geneticCode) {
         super(weight, age, gender, geneticCode);
         System.out.println("Лев");
     }
 
     @Override
-    public void voice() {
+    protected void voice() {
         System.out.println("Лев рычит");
     }
 }

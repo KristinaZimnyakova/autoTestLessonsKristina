@@ -19,13 +19,13 @@ public abstract class Animal {
         MEAT;
     }
 
-    public static Gender randomGender () {
+    protected static Gender randomGender () {
         Random GENDER = new Random();
         Gender[] gender = Gender.values();
         return gender[GENDER.nextInt(gender.length)];
     }
 
-    public Animal (int weight, int age, Gender gender, UUID geneticCode) {
+    protected Animal (int weight, int age, Gender gender, UUID geneticCode) {
         this.weight = weight;
         this.age = age;
         this.genderAnimal = gender.toString();
@@ -33,18 +33,18 @@ public abstract class Animal {
         System.out.println("Вес " + weight + " возраст " + age + " пол " + genderAnimal + " ген код " + geneticCodeAnimal);
     }
 
-    public void eat(int weightMeal, Meal meal) {
+    protected void eat(int weightMeal, Meal meal) {
         this.weight = weight + weightMeal/25;
         System.out.println("Вес животного после еды " + meal + " " + weight);
     };
 
-    public void wolk() {
+    protected void wolk() {
         System.out.println("Гуляет");
     }
 
-    public abstract void voice();
+    protected abstract void voice();
 
-    public static void reproduction (Animal animal1, Animal animal2) {
+    protected static void reproduction (Animal animal1, Animal animal2) {
         if (animal1.genderAnimal.equals(animal2.genderAnimal)) {
             System.out.println("Для размножения требуется самец и самка");
         }

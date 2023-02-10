@@ -6,12 +6,12 @@ import static task2_1.Animal.Meal.MEAT;
 
 public class Predator  extends Animal{
 
-    public Predator(int weight, int age, Gender gender, UUID geneticCode) {
+    protected Predator(int weight, int age, Gender gender, UUID geneticCode) {
         super(weight, age, gender, geneticCode);
     }
 
     @Override
-    public void eat(int weightMeal, Meal meal) {
+    protected void eat(int weightMeal, Meal meal) {
         if (meal==MEAT) {
             double ratioPredator = 0.5;
             if (weightMeal < ratioPredator * weight) {
@@ -28,7 +28,7 @@ public class Predator  extends Animal{
     }
 
     @Override
-    public void voice() {
+    protected void voice() {
 
     }
 }

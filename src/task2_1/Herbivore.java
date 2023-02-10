@@ -6,12 +6,12 @@ import static task2_1.Animal.Meal.GRASS;
 import static task2_1.Animal.Meal.MEAT;
 
 public class Herbivore extends Animal{
-    public Herbivore(int weight, int age, Gender gender, UUID geneticCode) {
+    protected Herbivore(int weight, int age, Gender gender, UUID geneticCode) {
         super(weight, age, gender, geneticCode);
     }
 
     @Override
-    public void eat(int weightMeal, Meal meal) {
+    protected void eat(int weightMeal, Meal meal) {
         if (meal==GRASS) {
             if (weightMeal * 3 < weight * 2) {
                 System.out.println("Животное погибло");
@@ -26,7 +26,7 @@ public class Herbivore extends Animal{
     }
 
     @Override
-    public void voice() {
+    protected void voice() {
 
     }
 }
