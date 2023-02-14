@@ -3,7 +3,7 @@ package task2_1;
 import java.util.UUID;
 
 public class Rabbit extends Herbivore{
-    protected Rabbit(int weight, int age, Gender gender, UUID geneticCode) {
+    protected Rabbit(float weight, int age, Gender gender, UUID geneticCode) {
         super(weight, age, gender, geneticCode);
         System.out.println("Заяц");
     }

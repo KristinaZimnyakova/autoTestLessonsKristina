@@ -4,7 +4,7 @@ import java.util.UUID;
 
 public class Tiger extends Predator{
 
-    protected Tiger(int weight, int age, Gender gender, UUID geneticCode) {
+    protected Tiger(float weight, int age, Gender gender, UUID geneticCode) {
         super(weight, age, gender, geneticCode);
         System.out.println("Тигр");
     }
