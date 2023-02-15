@@ -35,13 +35,13 @@ public abstract class Animal {
 
     protected abstract void voice();
 
-    protected static void reproduction(Animal animal1, Animal animal2, boolean isAlive1, boolean asAlive2) {
+    protected static void reproduction(Animal animal1, Animal animal2, boolean isAlive1, boolean isAlive2) {
         if (animal1.getClass() != animal2.getClass()) {
             System.out.println("Особи должны быть одного класса");
         } else if (animal1.genderAnimal.equals(animal2.genderAnimal)) {
             System.out.println("Для размножения требуется самец и самка");
         }
-        else if (isAlive1 == true && asAlive2 == true) {
+        else if (isAlive1 && isAlive2) {
             String child = animal1.geneticCodeAnimal + animal2.geneticCodeAnimal;
             String childGeneticCode = child.substring(18,54);
             System.out.println("Потомтсво " + childGeneticCode);

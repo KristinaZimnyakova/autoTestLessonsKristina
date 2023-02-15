@@ -22,12 +22,14 @@ public abstract class Order {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Выберите тип заказа: offline или online");
         String orderType = scanner.nextLine();
-        if (orderType.equals("online")) {
+        if (orderType.equals("offline")) {
             System.out.println("Введите желамые позиции из меню");
             while (true) {
+                int countDrinks = 0;
                 String orderItem = scanner.nextLine();
                 if (orderItem.equals("COFE") | orderItem.equals("JUICE") | orderItem.equals("SODA")) {
                     addDrinks(Drinks.valueOf(orderItem));
+                    countDrinks ++;
                 }
                 else if (orderItem.equals("PIZZA") | orderItem.equals("BURGER") | orderItem.equals("KEBAB")) {
                     addDishes(Dishes.valueOf(orderItem));
