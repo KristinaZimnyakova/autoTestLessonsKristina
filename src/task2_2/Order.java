@@ -25,11 +25,9 @@ public abstract class Order {
         if (orderType.equals("offline")) {
             System.out.println("Введите желамые позиции из меню");
             while (true) {
-                int countDrinks = 0;
                 String orderItem = scanner.nextLine();
                 if (orderItem.equals("COFE") | orderItem.equals("JUICE") | orderItem.equals("SODA")) {
                     addDrinks(Drinks.valueOf(orderItem));
-                    countDrinks ++;
                 }
                 else if (orderItem.equals("PIZZA") | orderItem.equals("BURGER") | orderItem.equals("KEBAB")) {
                     addDishes(Dishes.valueOf(orderItem));
@@ -43,8 +41,6 @@ public abstract class Order {
                     System.out.println("Отсутсвующая позиция меню");
                 }
             }
-
-
         }
         else if (orderType.equals("offline")) {
 
@@ -52,5 +48,11 @@ public abstract class Order {
         else {
             System.out.println("Недопустимый тип заказа");
         }
+    }
+
+    public void duplicate() {
+
+
+
     }
 }
