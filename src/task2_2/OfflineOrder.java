@@ -28,10 +28,7 @@ public class OfflineOrder extends Order{
         return 0;
     }
 
-    @Override
-    public double calculate() {
-        return 0;
-    }
+
 
     public static void menu() {
 

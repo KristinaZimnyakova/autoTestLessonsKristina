@@ -1,6 +1,8 @@
 package task2_2;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Scanner;
 
 public abstract class Order {
@@ -8,7 +10,23 @@ public abstract class Order {
     static ArrayList <Drinks> orderDrinks = new ArrayList<>();
     static ArrayList <Dishes> orderDishes = new ArrayList<>();
 
-    public abstract double calculate();
+    public static void  calculateDishes() {
+        Map<Dishes, Integer> frequencyMap = new HashMap<>();
+        for (Dishes i: orderDishes) {
+            Integer count = frequencyMap.get(i);
+            if (count == null) {
+                count = 0;
+            }
+            frequencyMap.put(i, count +1);
+        }
+        double summ = 0;
+        for (Map.Entry<Dishes, Integer> entry: frequencyMap.entrySet()) {
+            System.out.println(entry.getKey() + ": " + entry.getValue());
+            double summPosition = entry.getKey().price * (entry.getValue()/2*1.5) + entry.getKey().price * (entry.getValue()% 2);
+            summ = summ + summPosition;
+        }
+        System.out.println(summ);
+    }
 
     public static void addDrinks (Drinks drinks) {
         orderDrinks.add(drinks);

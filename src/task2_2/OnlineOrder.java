@@ -1,8 +1,8 @@
 package task2_2;
 
 public class OnlineOrder extends Order{
-    @Override
-    public double calculate() {
+
+    public double calculate3() {
         return 0;
     }
 
