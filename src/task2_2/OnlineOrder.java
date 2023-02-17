@@ -19,7 +19,7 @@ public class OnlineOrder extends Order{
         for (Map.Entry<Drinks, Integer> entry: frequencyMap.entrySet()) {
             //System.out.println("Ваш заказ напитки: " + entry.getKey() + ": " + entry.getValue());
             double summPosition = entry.getKey().price * entry.getValue();
-            summDrinks = summDrinks + summPosition;
+            summDrinks += summPosition;
         }
         //System.out.println(summDrinks);
         return summDrinks;

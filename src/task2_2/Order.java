@@ -32,7 +32,7 @@ public abstract class Order {
         for (Map.Entry<Dishes, Integer> entry: frequencyMap.entrySet()) {
             //System.out.println("Ваш заказ блюда: " + entry.getKey() + ": " + entry.getValue());
             double summPosition = entry.getKey().price * (entry.getValue()/2*1.5) + entry.getKey().price * (entry.getValue()% 2);
-            summDishes = summDishes + summPosition;
+            summDishes += summPosition;
         }
         //System.out.println(summDishes);
         return summDishes;
