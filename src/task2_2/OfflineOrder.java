@@ -5,8 +5,8 @@ import java.util.Map;
 
 public class OfflineOrder extends Order{
 
-    public static double calculate1() {
-
+    //второй напиток в подарок в оффлайне
+    public double calculateDrinksOffline() {
         Map<Drinks, Integer> frequencyMap = new HashMap<>();
         for (Drinks i: orderDrinks) {
             Integer count = frequencyMap.get(i);
@@ -15,23 +15,21 @@ public class OfflineOrder extends Order{
             }
             frequencyMap.put(i, count +1);
         }
-        double summ = 0;
+        double summDrinks = 0;
         for (Map.Entry<Drinks, Integer> entry: frequencyMap.entrySet()) {
-            System.out.println(entry.getKey() + ": " + entry.getValue());
+            //System.out.println("Ваш заказ напитки: " + entry.getKey() + ": " + entry.getValue());
             double summPosition = entry.getKey().price * ((entry.getValue()+2-1)/2);
-            summ = summ + summPosition;
+            summDrinks = summDrinks + summPosition;
         }
-        System.out.println(summ);
-
-
-
-        return 0;
+        //System.out.println(summDrinks);
+        return summDrinks;
     }
-
-
-
-    public static void menu() {
-
+    @Override
+    public double calculateOrder() {
+        double summDishes = calculateDishes();
+        double summDrinks = calculateDrinksOffline();
+        double summOfflineorder = summDishes + summDrinks;
+        return summOfflineorder;
     }
 
 }
