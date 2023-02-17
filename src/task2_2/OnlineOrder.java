@@ -6,7 +6,7 @@ import java.util.Map;
 public class OnlineOrder extends Order{
 
     //напитки в онлайне без скидки
-    public double calculateDrinksOnline() {
+    private double calculateDrinksOnline() {
         Map<Drinks, Integer> frequencyMap = new HashMap<>();
         for (Drinks i: orderDrinks) {
             Integer count = frequencyMap.get(i);
@@ -26,7 +26,7 @@ public class OnlineOrder extends Order{
     }
     //скидка на весь онлайн заказ 15%
     @Override
-    public double calculateOrder() {
+    protected double calculateOrder() {
         double summDrinks = calculateDrinksOnline();
         double summDishes = calculateDishes();
         double summOnlineOrder = (summDrinks + summDishes)* 0.85;

@@ -7,19 +7,19 @@ import java.util.Scanner;
 
 public abstract class Order {
 
-    public abstract double calculateOrder();
+    protected abstract double calculateOrder();
 
     static ArrayList <Drinks> orderDrinks = new ArrayList<>();
     static ArrayList <Dishes> orderDishes = new ArrayList<>();
 
-    public static void addDrinks(Drinks drinks) {
+    protected static void addDrinks(Drinks drinks) {
         orderDrinks.add(drinks);
     }
-    public static void addDishes(Dishes dishes) {
+    protected static void addDishes(Dishes dishes) {
         orderDishes.add(dishes);
     }
     //логика одинаковая для online и offline заказов - на второе такое же блюдо 50% скидка
-    public double calculateDishes() {
+    protected double calculateDishes() {
         Map<Dishes, Integer> frequencyMap = new HashMap<>();
         for (Dishes i: orderDishes) {
             Integer count = frequencyMap.get(i);
@@ -38,7 +38,7 @@ public abstract class Order {
         return summDishes;
     }
     //принимает заказ
-    public static void menu() {
+    protected static void menu() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Выберите тип заказа: offline или online");
         String orderType = scanner.nextLine();

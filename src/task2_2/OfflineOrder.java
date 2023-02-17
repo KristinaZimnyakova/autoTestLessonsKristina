@@ -6,7 +6,7 @@ import java.util.Map;
 public class OfflineOrder extends Order{
 
     //второй напиток в подарок в оффлайне
-    public double calculateDrinksOffline() {
+     private double calculateDrinksOffline() {
         Map<Drinks, Integer> frequencyMap = new HashMap<>();
         for (Drinks i: orderDrinks) {
             Integer count = frequencyMap.get(i);
@@ -25,7 +25,7 @@ public class OfflineOrder extends Order{
         return summDrinks;
     }
     @Override
-    public double calculateOrder() {
+    protected double calculateOrder() {
         double summDishes = calculateDishes();
         double summDrinks = calculateDrinksOffline();
         double summOfflineorder = summDishes + summDrinks;
