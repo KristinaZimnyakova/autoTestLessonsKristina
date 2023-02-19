@@ -46,14 +46,14 @@ public abstract class Order {
             System.out.println("Введите желамые позиции из меню: COFE JUICE SODA PIZZA BURGER KEBAB \n" +
                     "Для завершения заказа введите \"Заказ окончен\"");
             while (true) {
-                String orderItem = scanner.nextLine();
+                String orderItem = scanner.nextLine().toUpperCase();
                 if (orderItem.equals("COFE") | orderItem.equals("JUICE") | orderItem.equals("SODA")) {
                     addDrinks(Drinks.valueOf(orderItem));
                 }
                 else if (orderItem.equals("PIZZA") | orderItem.equals("BURGER") | orderItem.equals("KEBAB")) {
                     addDishes(Dishes.valueOf(orderItem));
                 }
-                else if (orderItem.equals("Заказ окончен")) {
+                else if (orderItem.equals("ЗАКАЗ ОКОНЧЕН")) {
                     break;
                 }
                 else {
