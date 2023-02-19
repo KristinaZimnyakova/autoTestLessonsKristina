@@ -6,12 +6,12 @@ import static task2_1.Meal.MEAT;
 
 public class Predator  extends Animal{
 
-    protected Predator(float weight, int age, Gender gender, UUID geneticCode) {
-        super(weight, age, gender, geneticCode);
+    protected Predator(float weight, int age, UUID geneticCode) {
+        super(weight, age, geneticCode);
     }
 
     @Override
-    protected boolean eat(float weightMeal, Meal meal) {
+    protected void eat(float weightMeal, Meal meal) {
         boolean isAlive;
         if (meal==MEAT) {
             double ratioPredator = 0.5;
@@ -28,7 +28,6 @@ public class Predator  extends Animal{
             System.out.println("Хищник ест мясо!");
             isAlive = false;
         }
-        return isAlive;
     }
 
     @Override

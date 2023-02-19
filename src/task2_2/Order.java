@@ -40,9 +40,9 @@ public abstract class Order {
     //принимает заказ
     protected static void menu() {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Выберите тип заказа: offline или online");
+        System.out.println("Выберите тип заказа: для заказа offline введите 1, для заказа online введите 2");
         String orderType = scanner.nextLine();
-        if (orderType.equals("offline")  | orderType.equals("online")) {
+        if (orderType.equals("1")  | orderType.equals("2")) {
             System.out.println("Введите желамые позиции из меню: COFE JUICE SODA PIZZA BURGER KEBAB \n" +
                     "Для завершения заказа введите \"Заказ окончен\"");
             while (true) {
@@ -60,7 +60,7 @@ public abstract class Order {
                     System.out.println("Отсутсвующая позиция меню");
                 }
             }
-            if (orderType.equals("online")) {
+            if (orderType.equals("2")) {
                 OnlineOrder onlineOrder = new OnlineOrder();
                 double summOnlineOrder = onlineOrder.calculateOrder();
                 System.out.println("Сумма к оплате Вашего online-заказа: " + summOnlineOrder);

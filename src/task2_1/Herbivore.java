@@ -5,13 +5,14 @@ import java.util.UUID;
 import static task2_1.Meal.GRASS;
 
 public class Herbivore extends Animal{
-    protected Herbivore(float weight, int age, Gender gender, UUID geneticCode) {
-        super(weight, age, gender, geneticCode);
+
+
+    protected Herbivore(float weight, int age, UUID geneticCode) {
+        super(weight, age, geneticCode);
     }
 
     @Override
-    protected boolean eat(float weightMeal, Meal meal) {
-        boolean isAlive;
+    protected void eat(float weightMeal, Meal meal) {
         if (meal==GRASS) {
             if (weightMeal * 3 < weight * 2) {
                 System.out.println("Животное погибло");
@@ -26,7 +27,6 @@ public class Herbivore extends Animal{
             System.out.println("Травоядные едят траву!");
             isAlive = false;
         }
-        return isAlive;
     }
 
     @Override
