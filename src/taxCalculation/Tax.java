@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public abstract class Tax {
 
-      float calculate (float base) {
+       float calculate (float base) {
         VAT vat = new VAT();
         PIT pit = new PIT();
         ArrayList<Float> tax = new ArrayList<>();
