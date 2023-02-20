@@ -1,4 +1,4 @@
-package Birds;
+package birds;
 
 public interface Migrating {
     default void migrate() {

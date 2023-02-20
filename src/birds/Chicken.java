@@ -1,8 +1,10 @@
-package Birds;
+package birds;
 
-public class Ostrich extends Birds implements Swimming{
+public class Chicken extends Birds implements Flying, Swimming {
+
     @Override
     public void swim() {
         System.out.println("Плавает на поверхности");
+
     }
 }

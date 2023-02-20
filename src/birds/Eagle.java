@@ -1,4 +1,4 @@
-package Birds;
+package birds;
 
 public class Eagle extends Birds implements Flying, Swimming, Migrating{
 

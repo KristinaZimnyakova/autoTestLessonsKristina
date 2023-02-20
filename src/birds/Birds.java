@@ -1,4 +1,4 @@
-package Birds;
+package birds;
 
 public abstract class Birds {
     static final int countWings = 2;

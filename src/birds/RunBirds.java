@@ -1,4 +1,4 @@
-package Birds;
+package birds;
 
 public class RunBirds {
     public static void main(String[] args){

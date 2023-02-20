@@ -1,4 +1,4 @@
-package Birds;
+package birds;
 
 public class Duck extends Birds implements Flying, Swimming, Migrating{
     @Override
