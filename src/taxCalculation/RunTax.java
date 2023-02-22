@@ -4,11 +4,12 @@ import java.util.ArrayList;
 
 public class RunTax {
     public static void main(String[] args){
-        VAT vat = new VAT();
-        PIT pit = new PIT();
+        float base = 6000000;
+        ValueAddedTax valueAddedTax = new ValueAddedTax();
+        ProgressiveTax progressiveTax = new ProgressiveTax();
         ArrayList<Float> tax = new ArrayList<>();
-        tax.add(vat.calculate(6000000));
-        tax.add(pit.calculate(6000000));
+        tax.add(valueAddedTax.calculate(base));
+        tax.add(progressiveTax.calculate(base));
         for (float i: tax) {
         }
     }
