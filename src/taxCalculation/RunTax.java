@@ -11,6 +11,7 @@ public class RunTax {
         tax.add(valueAddedTax.calculate(base));
         tax.add(progressiveTax.calculate(base));
         for (float i: tax) {
+            System.out.println(tax);
         }
     }
 
