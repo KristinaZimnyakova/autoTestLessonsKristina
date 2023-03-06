@@ -1,14 +1,21 @@
 package task2;
 
-import java.util.ArrayList;
+import java.io.IOException;
+import java.util.List;
+import java.util.Scanner;
 
 public class RunTask2 {
 
-    public static void main(String[] args){
-        ArrayList<String> surname = FileWork.fileReading("C:\\Users\\79376\\Desktop\\surname.txt");
-        System.out.println(surname);
-        String randomeName = FileWork.randomName(surname);
-        System.out.println(randomeName);
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Введите количество ФИО для геренации");
+        Integer number = scanner.nextInt();
+        String filePathNames = String.format("%s\\FirstNames.txt", System.getProperty("user.dir"));
+        String filePathMiddleNames = String.format("%s\\MiddleNames.txt", System.getProperty("user.dir"));
+        String filePathSecondNames = String.format("%s\\SecondNames.txt", System.getProperty("user.dir"));
+        List<String> resultList = FileWork.listFIOcreating(filePathNames, filePathMiddleNames, filePathSecondNames, number);
+        FileWork.fileWriting(resultList);
     }
+
 
 }
