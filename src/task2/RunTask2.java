@@ -7,6 +7,7 @@ import java.util.Scanner;
 public class RunTask2 {
 
     public static void main(String[] args) {
+        //FileWork.fileDelete();
         Scanner scanner = new Scanner(System.in);
         System.out.println("Введите количество ФИО для геренации");
         Integer number = scanner.nextInt();

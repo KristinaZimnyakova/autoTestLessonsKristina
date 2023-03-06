@@ -15,7 +15,7 @@ import java.util.stream.Collectors;
 
 public class FileWork {
 
-    String newFileForDelete;
+    //static String newFileForDelete = String.format("%s\\new.txt", System.getProperty("user.dir"));
 
     public static List<String> fileReading (String filePathNames) {
         List<String> names;
@@ -50,7 +50,7 @@ public class FileWork {
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd_HH-mm-ss-ms");
         String fileName = "NewFIO_" + dateFormat.format(new Date()) + ".txt";
         String newFile = String.format("%s\\" + fileName, System.getProperty("user.dir"));
-
+        //newFileForDelete = newFile;
         File file = new File(newFile);
         try {
             file.createNewFile();
@@ -66,5 +66,11 @@ public class FileWork {
             e.printStackTrace();
        }
     }
+//    public static void fileDelete() {
+//        File file = new File(newFileForDelete);
+//        if(file.delete()){
+//            System.out.println(newFileForDelete + " файл удален");
+//        } else System.out.println("Файла " + newFileForDelete + " не обнаружено");
+//    }
 
 }
