@@ -17,33 +17,20 @@ public class NumberAudit {
         if (Integer.parseInt(number) == 0) {
             throw new Is0Exception();
         }
-        else if (Integer.parseInt(number) % 10 == 0) {
-            try {
-                throw new Multiplisity10Exception();
-            } catch (Multiplisity10Exception e) {
-                System.out.println("Число кратно 10");
-                e.printStackTrace();
-            }
-            finally {
-                System.out.println(Math.pow(Integer.parseInt(number), 2));
-            }
+        try {
+            NumberDividing.dividing10(number);
+        } catch (Multiplisity10Exception e) {
+            System.out.println("Число кратно 10");
+            e.printStackTrace();
         }
-        else if (Integer.parseInt(number) % 2 == 0) {
-            try {
-                throw new Multiplisity2Exception();
-            } catch (Multiplisity2Exception e) {
-                System.out.println("Число кратно 2");
-                e.printStackTrace();
-            }
-            finally {
-                System.out.println(Math.pow(Integer.parseInt(number), 2));
-            }
+        try {
+            NumberDividing.dividing2(number);
+        } catch (Multiplisity2Exception e) {
+            System.out.println("Число кратно 2");
+            e.printStackTrace();
         }
-        else {
+        finally {
             System.out.println(Math.pow(Integer.parseInt(number), 2));
         }
-
-
-
     }
 }

@@ -66,7 +66,7 @@ public class FileWork {
         }
         catch (IOException e) {
             e.printStackTrace();
-       }
+        }
         File fileDelete = new File(FileWork.fileForDelete);
         Path pathDelete = Paths.get(fileDelete.getPath());
         try {
@@ -91,7 +91,7 @@ public class FileWork {
             } else System.out.println("Файла " + i + " не обнаружено");
         }
 
-        }
+    }
 
 
 
