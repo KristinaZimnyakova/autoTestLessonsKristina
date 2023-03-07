@@ -2,6 +2,7 @@ package task2;
 
 import java.io.File;
 import java.io.IOException;
+import java.nio.channels.FileChannel;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -15,7 +16,8 @@ import java.util.stream.Collectors;
 
 public class FileWork {
 
-    //static String newFileForDelete = String.format("%s\\new.txt", System.getProperty("user.dir"));
+    static String userDir = System.getProperty("user.dir");
+    static String fileForDelete = String.format("%s\\FileForDelete.txt", FileWork.userDir);
 
     public static List<String> fileReading (String filePathNames) {
         List<String> names;
@@ -65,12 +67,34 @@ public class FileWork {
         catch (IOException e) {
             e.printStackTrace();
        }
+        File fileDelete = new File(FileWork.fileForDelete);
+        Path pathDelete = Paths.get(fileDelete.getPath());
+        try {
+            FileChannel.open(Path.of(fileForDelete), StandardOpenOption.WRITE).truncate(0).close();
+            Files.writeString(pathDelete, fileName, StandardOpenOption.APPEND);
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
     }
-//    public static void fileDelete() {
-//        File file = new File(newFileForDelete);
-//        if(file.delete()){
-//            System.out.println(newFileForDelete + " файл удален");
-//        } else System.out.println("Файла " + newFileForDelete + " не обнаружено");
-//    }
+    public static void fileDelete() {
+        List<String> fileNames;
+        try {
+            fileNames = Files.lines(Paths.get(fileForDelete)).collect(Collectors.toList());
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        for (String i: fileNames) {
+            File file = new File(i);
+            if(file.delete()){
+                System.out.println(i + " файл удален");
+            } else System.out.println("Файла " + i + " не обнаружено");
+        }
+
+        }
+
+
+
+
 
 }
