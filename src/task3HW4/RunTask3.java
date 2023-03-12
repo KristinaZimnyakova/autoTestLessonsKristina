@@ -13,6 +13,6 @@ public class RunTask3 {
         String filePathNames = String.format("%s\\FirstNames.txt", FileWork.userDir);
         String filePathMiddleNames = String.format("%s\\MiddleNames.txt", FileWork.userDir);
         String filePathSecondNames = String.format("%s\\SecondNames.txt", FileWork.userDir);
-        Person.listAndMapCreating(filePathNames, filePathMiddleNames, filePathSecondNames, number);
+        PersonFIO.listAndMapCreating(filePathNames, filePathMiddleNames, filePathSecondNames, number);
     }
 }

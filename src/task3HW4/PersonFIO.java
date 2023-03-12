@@ -9,11 +9,11 @@ import java.util.Map;
 
 import static task2.FileWork.randomName;
 
-public class Person {
+public class PersonFIO {
     String secondName;
     String nameAndMiddleName;
 
-    public Person (String secondName, String nameAndMiddleName) {
+    public PersonFIO(String secondName, String nameAndMiddleName) {
         this.secondName = secondName;
         this.nameAndMiddleName = nameAndMiddleName;
     }
@@ -30,17 +30,17 @@ public class Person {
         List<String> names = FileWork.fileReading(filePathNames);
         List<String> middleNames = FileWork.fileReading(filePathMiddleNames);
         List<String> secondNames = FileWork.fileReading(filePathSecondNames);
-        List<Person> persons = new ArrayList<>();
+        List<PersonFIO> persons = new ArrayList<>();
         for (int i=0; i<number; i++) {
             String randomeName = randomName(names);
             String randomeMiddleName = randomName(middleNames);
             String randomeSecondName = randomName(secondNames);
             String nameAndMiddleName = randomeName + " " + randomeMiddleName;
-            persons.add(new Person(randomeSecondName, nameAndMiddleName));
+            persons.add(new PersonFIO(randomeSecondName, nameAndMiddleName));
         }
         Map<String, String> personsMap = new HashMap<>();
 
-        for (Person p: persons) {
+        for (PersonFIO p: persons) {
             personsMap.put(p.getSecondName(), p.getNameAndMiddleName());
         }
 
