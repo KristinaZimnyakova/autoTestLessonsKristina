@@ -14,20 +14,15 @@ public class NumberAudit {
             e.printStackTrace();
             System.out.println("Введено не число");
         }
-        if (Integer.parseInt(number) == 0) {
-            throw new Is0Exception();
-        }
         try {
-            NumberDividing.dividing10(number);
+            NumberDividing.dividing(number);
         } catch (Multiplisity10Exception e) {
             System.out.println("Число кратно 10");
             e.printStackTrace();
         }
-        try {
-            NumberDividing.dividing2(number);
-        } catch (Multiplisity2Exception e) {
+        catch (Multiplisity2Exception e1) {
             System.out.println("Число кратно 2");
-            e.printStackTrace();
+            e1.printStackTrace();
         }
         finally {
             System.out.println(Math.pow(Integer.parseInt(number), 2));
