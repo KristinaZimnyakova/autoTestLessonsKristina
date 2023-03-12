@@ -16,7 +16,7 @@ import java.util.stream.Collectors;
 
 public class FileWork {
 
-    static String userDir = System.getProperty("user.dir");
+    public static String userDir = System.getProperty("user.dir");
     static String fileForDelete = String.format("%s\\FileForDelete.txt", FileWork.userDir);
 
     public static List<String> fileReading (String filePathNames) {
