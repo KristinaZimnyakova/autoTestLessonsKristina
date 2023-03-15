@@ -1,16 +1,14 @@
-package task1HW4;
+package task1Person;
 
 import task2.FileWork;
 
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 import static task2.FileWork.randomName;
 
 public class Person {
-    Integer age;
-    String name;
+    public Integer age;
+    public String name;
 
     public Person(String filePathNames) {
         List<String> names = FileWork.fileReading(filePathNames);
@@ -25,15 +23,19 @@ public class Person {
         return name;
     }
 
-    public static void setPersons (Integer number, String filePathNames) {
-        Set<Person> personSet = new HashSet<>();
+    public static List<Person> setPersons(Integer number, String filePathNames) {
+        List <Person> listPerson = new ArrayList<>();
         for (int i=0; i<number; i++) {
-            personSet.add(new Person(filePathNames));
+            listPerson.add(new Person(filePathNames));
         }
-        for (Person p: personSet) {
+        return listPerson;
+    }
+    public static void listToSetPersons(List <Person> listPerson) {
+        listPerson.sort(new PersonComparator());
+        LinkedHashSet<Person> personLinkedHashSet = new LinkedHashSet<>(listPerson);
+        for (Person p: personLinkedHashSet) {
             System.out.println("Возраст: " + p.getAge() + " Имя: " + p.getName());
         }
-
     }
 
 }
