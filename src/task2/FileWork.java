@@ -29,6 +29,7 @@ public class FileWork {
         return names;
     }
 
+    //название метода не оторжает суть, лучше рендом лайн
     public static String randomName (List <String> name) {
         Random randomName = new Random();
         return name.get(randomName.nextInt(name.size()));
@@ -42,6 +43,7 @@ public class FileWork {
             String randomeName1 = randomName(names);
             String randomeMiddleName1 = randomName(middleNames);
             String randomeSecondName1 = randomName(secondNames);
+            //String fomrmat
             String FIO1 = randomeSecondName1 + " " + randomeName1 + " " + randomeMiddleName1;
             resultList.add(FIO1);
         }

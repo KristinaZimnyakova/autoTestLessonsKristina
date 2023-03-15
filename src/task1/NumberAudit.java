@@ -5,6 +5,7 @@ import java.util.Scanner;
 public class NumberAudit {
 
     public static void numberAudit () throws Is0Exception {
+        //тут нужен диалог
         Scanner scanner = new Scanner(System.in);
         String number = scanner.nextLine();
         try {
