@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class NumberAudit {
 
     public static void numberAudit () throws Is0Exception {
-        //тут нужен диалог
+        System.out.println("¬ведите число");
         Scanner scanner = new Scanner(System.in);
         String number = scanner.nextLine();
         try {

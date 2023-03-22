@@ -30,9 +30,9 @@ public class FileWork {
     }
 
     //название метода не оторжает суть, лучше рендом лайн
-    public static String randomName (List <String> name) {
-        Random randomName = new Random();
-        return name.get(randomName.nextInt(name.size()));
+    public static String randomLine (List <String> name) {
+        Random randomLine = new Random();
+        return name.get(randomLine.nextInt(name.size()));
     }
     public static List<String> listFIOcreating(String filePathNames, String filePathMiddleNames, String filePathSecondNames, Integer number) {
         List<String> names = FileWork.fileReading(filePathNames);
@@ -40,12 +40,12 @@ public class FileWork {
         List<String> secondNames = FileWork.fileReading(filePathSecondNames);
         List<String> resultList = new ArrayList<>();
         for (int i=0; i<number; i++) {
-            String randomeName1 = randomName(names);
-            String randomeMiddleName1 = randomName(middleNames);
-            String randomeSecondName1 = randomName(secondNames);
+            String randomeName = randomLine(names);
+            String randomeMiddleName = randomLine(middleNames);
+            String randomeSecondName = randomLine(secondNames);
             //String fomrmat
-            String FIO1 = randomeSecondName1 + " " + randomeName1 + " " + randomeMiddleName1;
-            resultList.add(FIO1);
+            String FIO = randomeSecondName + " " + randomeName + " " + randomeMiddleName;
+            resultList.add(FIO);
         }
         return resultList;
     }
@@ -54,7 +54,6 @@ public class FileWork {
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd_HH-mm-ss-ms");
         String fileName = "NewFIO_" + dateFormat.format(new Date()) + ".txt";
         String newFile = String.format("%s\\" + fileName, System.getProperty("user.dir"));
-        //newFileForDelete = newFile;
         File file = new File(newFile);
         try {
             file.createNewFile();
