@@ -10,10 +10,9 @@ public class Person {
     public Integer age;
     public String name;
 
-    public Person(String filePathNames) {
-        List<String> names = FileWork.fileReading(filePathNames);
-        this.age = (int) (Math.random()*(100)) + 1;
-        this.name = randomName(names);
+    public Person(Integer age, String name) {
+        this.age = age;
+        this.name = name;
     }
 
     public Integer getAge() {
